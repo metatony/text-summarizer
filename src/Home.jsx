@@ -17,8 +17,10 @@ function Home() {
     async function getData(){
         const ApiKey = '8ebcefba2fmsh38a017c7fcdbe5bp1ce5a3jsn69918e0be5d3'
 
-
+        //enables the laoding state while retrieving summary
         setLoading(true);
+
+        //refreshes the current state of the state variables
         setError(false);
         setSummary('');
 
@@ -59,31 +61,32 @@ function Home() {
 
     return(
        <div className="mx-auto w-full max-w-lg py-24 space-y-24 min-h-screen flex flex-col justify-center">
-      <div className="space-y-6 w-full text-center">
-        <h1 className="text-6xl font-bold">Shorten AI</h1>
-        <p>Unlock the power of text summarization with AI.</p>
-      </div>
-      <div className="space-y-4 w-full">
-        <div className="p-4 border rounded flex flex-col space-y-4 bg-gray-50">
-          <textarea
-            className="border rounded p-4"
-            value={text}
-            onChange={textAreaState}
-            disabled={loading}
-          />
-          <button
-            type='submit'
-            onClick={getData}
-            className="bg-black text-white rounded px-4 py-2"
-          >
-            Summarize
-          </button>
-        </div>
-      </div>
 
-      <div className="border space-y-2 rounded bg-white overflow-hidden">
-        <div className="p-2">{summary}</div>
-      </div>
+        <div className="space-y-6 w-full text-center">
+          <h1 className="text-4xl font-bold">Text summarization with AI</h1>
+        </div>
+
+        <div className="space-y-4 w-full">
+          <div className="p-4 border rounded flex flex-col space-y-4 bg-gray-50">
+            <textarea
+              className="border rounded p-4"
+              value={text}
+              onChange={textAreaState}
+              disabled={loading}
+            />
+              <button
+                type='submit'
+                onClick={getData}
+                className="bg-black text-white rounded px-4 py-2"
+              >
+                summarize
+              </button>
+          </div>
+        </div>
+
+        <div className="border space-y-2 rounded bg-white overflow-hidden">
+          <div className="p-2">{summary}</div>
+        </div>
 
     </div>
     )

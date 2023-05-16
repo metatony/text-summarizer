@@ -62,7 +62,7 @@ function Home() {
     return(
        <div className="mx-auto w-full max-w-lg py-24 space-y-24 min-h-screen flex flex-col justify-center">
 
-        <div className="space-y-6 w-full text-center">
+        <div className="space-y-6 w-full text-center text-white">
           <h1 className="text-4xl font-bold">Text summarization with AI</h1>
         </div>
 
@@ -77,7 +77,7 @@ function Home() {
               <button
                 type='submit'
                 onClick={getData}
-                className="bg-black text-white rounded px-4 py-2"
+                className="bg-[#272C71] text-white rounded px-4 py-2"
               >
                 summarize
               </button>
